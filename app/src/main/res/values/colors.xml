@@ -11,4 +11,5 @@
     <color name="dark_blue_800">#00274D</color>
     <color name="splash_header">#367E7F</color>
     <color name="charcoal_grey_dark">#1A1A1A</color>
+    <color name="background_light">#F5F5F5</color>
 </resources>

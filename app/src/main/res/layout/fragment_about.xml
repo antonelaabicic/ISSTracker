@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/_50dp"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context=".fragments.AboutFragment">
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/satellite_animation"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        app:lottie_rawRes="@raw/about"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true" />
+
+    <TextView
+        android:id="@+id/app_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/title_about"
+        android:textColor="@color/splash_header"
+        android:textSize="40sp"
+        android:padding="8dp"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif-medium"
+        tools:text="ISS Tracker"/>
+
+    <TextView
+        android:id="@+id/app_description"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:text="@string/app_description"
+        android:textColor="@color/charcoal_grey_dark"
+        android:textSize="25sp"
+        android:gravity="center"
+        android:padding="16dp"
+        android:textStyle="bold"
+        android:fontFamily="cursive" />
+</LinearLayout>

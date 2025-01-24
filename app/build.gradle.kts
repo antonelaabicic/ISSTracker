@@ -54,5 +54,8 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
 
     implementation (libs.lottie)
-
+    // preferences
+    implementation(libs.androidx.preference.ktx)
+    // worker
+    implementation(libs.androidx.work.runtime.ktx)
 }
