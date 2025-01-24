@@ -8,6 +8,7 @@ import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
 import android.os.Handler
 import android.os.Looper
+import android.util.Log
 import androidx.core.content.getSystemService
 import androidx.preference.PreferenceManager
 import hr.algebra.isstracker.DataReceiver
@@ -23,7 +24,7 @@ inline fun <reified T : Activity>Context.startActivity() {
 fun Context.getBooleanPreference(key: String) =
     PreferenceManager
         .getDefaultSharedPreferences(this)
-        .getBoolean(key, true)
+        .getBoolean(key, false)
 
 fun Context.setBooleanPreference(key: String, value: Boolean = true) =
     PreferenceManager

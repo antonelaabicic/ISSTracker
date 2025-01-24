@@ -53,9 +53,20 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 
+    // animation
     implementation (libs.lottie)
     // preferences
     implementation(libs.androidx.preference.ktx)
     // worker
     implementation(libs.androidx.work.runtime.ktx)
+    // navigation
+    implementation(libs.androidx.navigation.fragment.ktx.v285)
+    implementation(libs.androidx.navigation.ui.ktx.v285)
+    // retrofit
+    implementation(libs.retrofit)
+    implementation(libs.gson)
+    implementation(libs.retrofit2.converter.gson)
+    // parsing
+    implementation (libs.jsoup)
+
 }

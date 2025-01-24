@@ -1,21 +1,15 @@
 package hr.algebra.isstracker
 
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
-import android.util.Log
 import android.view.View
 import android.widget.LinearLayout
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import androidx.preference.PreferenceManager
 import androidx.work.ExistingWorkPolicy
 import androidx.work.OneTimeWorkRequest
 import androidx.work.WorkManager
 import com.airbnb.lottie.LottieAnimationView
 import com.airbnb.lottie.LottieDrawable
+import hr.algebra.isstracker.api.AstronautWorker
 import hr.algebra.isstracker.api.ISSLocationWorker
 import hr.algebra.isstracker.databinding.ActivitySplashScreenBinding
 import hr.algebra.isstracker.framework.callDelayed
@@ -24,7 +18,8 @@ import hr.algebra.isstracker.framework.isOnline
 import hr.algebra.isstracker.framework.startActivity
 
 private const val DELAY = 5000L
-public const val DATA_IMPORTED = "hr.algebra.nasa.data_imported"
+public const val DATA_IMPORTED_ISS_LOCATION = "hr.algebra.nasa.iss_location.data_imported"
+public const val DATA_IMPORTED_ASTRONAUTS = "hr.algebra.nasa.astronauts.data_imported"
 
 class SplashScreenActivity : AppCompatActivity() {
     private lateinit var binding: ActivitySplashScreenBinding
@@ -38,15 +33,22 @@ class SplashScreenActivity : AppCompatActivity() {
     }
 
     private fun redirect() {
-        if (getBooleanPreference(DATA_IMPORTED)) {
+        if (getBooleanPreference(DATA_IMPORTED_ISS_LOCATION) && getBooleanPreference(DATA_IMPORTED_ASTRONAUTS)) {
             callDelayed(DELAY) { startActivity<MainActivity>() }
         } else {
             if (isOnline()) {
                 WorkManager.getInstance(this).apply {
                     enqueueUniqueWork(
-                        DATA_IMPORTED,
+                        DATA_IMPORTED_ISS_LOCATION,
                         ExistingWorkPolicy.KEEP,
                         OneTimeWorkRequest.from(ISSLocationWorker::class.java)
+                    )
+                }
+                WorkManager.getInstance(this).apply {
+                    enqueueUniqueWork(
+                        DATA_IMPORTED_ASTRONAUTS,
+                        ExistingWorkPolicy.KEEP,
+                        OneTimeWorkRequest.from(AstronautWorker::class.java)
                     )
                 }
             } else {
@@ -55,7 +57,6 @@ class SplashScreenActivity : AppCompatActivity() {
             }
         }
     }
-
 
     private fun showNoInternetAnimation() {
         binding.satelliteAnimation.visibility = View.GONE

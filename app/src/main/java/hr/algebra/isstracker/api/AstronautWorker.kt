@@ -5,10 +5,10 @@ import androidx.work.Worker
 import androidx.work.WorkerParameters
 
 
-class ISSLocationWorker(private val context: Context, workerParamrs: WorkerParameters) : Worker(context, workerParamrs) {
+class AstronautWorker(private val context: Context, workerParamrs: WorkerParameters) : Worker(context, workerParamrs) {
 
     override fun doWork(): Result {
-        ISSLocationFetcher(context).fetchItem()
+        AstronautFetcher(context).fetchItems()
         return Result.success()
     }
 }
