@@ -1,6 +1,8 @@
 [versions]
 agp = "8.6.1"
+androidMapsUtils = "2.2.0"
 converterGson = "2.9.0"
+dexter = "6.0.2"
 gson = "2.10.1"
 jsoup = "1.14.2"
 kotlin = "1.9.0"
@@ -19,16 +21,25 @@ navigationFragmentKtxVersion = "2.8.5"
 navigationUiKtx = "2.8.3"
 activity = "1.10.0"
 navigationUiKtxVersion = "2.8.5"
+picasso = "2.71828"
+picassoTransformations = "2.4.0"
+playServicesLocation = "21.3.0"
+playServicesMaps = "19.0.0"
 preferenceKtx = "1.2.1"
 retrofit = "2.9.0"
+roomRuntime = "2.6.1"
 workRuntimeKtx = "2.8.1"
 
 [libraries]
+android-maps-utils = { module = "com.google.maps.android:android-maps-utils", version.ref = "androidMapsUtils" }
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 androidx-navigation-fragment-ktx-v285 = { module = "androidx.navigation:navigation-fragment-ktx", version.ref = "navigationFragmentKtxVersion" }
 androidx-navigation-ui-ktx-v285 = { module = "androidx.navigation:navigation-ui-ktx", version.ref = "navigationUiKtxVersion" }
 androidx-preference-ktx = { module = "androidx.preference:preference-ktx", version.ref = "preferenceKtx" }
+androidx-room-room-compiler = { module = "androidx.room:room-compiler", version.ref = "roomRuntime" }
+androidx-room-runtime = { module = "androidx.room:room-runtime", version.ref = "roomRuntime" }
 androidx-work-runtime-ktx = { module = "androidx.work:work-runtime-ktx", version.ref = "workRuntimeKtx" }
+dexter = { module = "com.karumi:dexter", version.ref = "dexter" }
 gson = { module = "com.google.code.gson:gson", version.ref = "gson" }
 jsoup = { module = "org.jsoup:jsoup", version.ref = "jsoup" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
@@ -43,6 +54,10 @@ androidx-lifecycle-viewmodel-ktx = { group = "androidx.lifecycle", name = "lifec
 androidx-navigation-fragment-ktx = { group = "androidx.navigation", name = "navigation-fragment-ktx", version.ref = "navigationFragmentKtx" }
 androidx-navigation-ui-ktx = { group = "androidx.navigation", name = "navigation-ui-ktx", version.ref = "navigationUiKtx" }
 androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
+picasso = { module = "com.squareup.picasso:picasso", version.ref = "picasso" }
+picasso-transformations = { module = "jp.wasabeef:picasso-transformations", version.ref = "picassoTransformations" }
+play-services-location = { module = "com.google.android.gms:play-services-location", version.ref = "playServicesLocation" }
+play-services-maps = { module = "com.google.android.gms:play-services-maps", version.ref = "playServicesMaps" }
 retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
 retrofit2-converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "converterGson" }
 

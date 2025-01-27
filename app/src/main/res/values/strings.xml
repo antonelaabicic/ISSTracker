@@ -4,4 +4,16 @@
     <string name="title_astronauts">Astronauts</string>
     <string name="title_about">About</string>
     <string name="app_description">Track the International Space Station (ISS) in real-time with our app! \nWatch its live position on a map and stay informed about the astronauts onboard.</string>
+    <string name="google_maps_api_key">AIzaSyC3WAKoAZbb9zmUeedFSIo0WxRgEw-eXFA</string>
+    <string name="name_surname">Name Surname</string>
+    <string name="delete">Delete?</string>
+    <string name="really">Are you really sure?</string>
+    <string name="cancel">Cancel</string>
+    <string name="name">Name</string>
+    <string name="position">Position</string>
+    <string name="description">Description</string>
+    <string name="country">Country</string>
+    <string name="agency">Agency</string>
+    <string name="days_in_space">Days in space</string>
+    <string name="country_with_flag">%1$s (%2$s)</string>
 </resources>

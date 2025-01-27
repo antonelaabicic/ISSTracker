@@ -1,8 +1,10 @@
 package hr.algebra.isstracker.api
 
+import android.content.ContentValues
 import android.content.Context
 import android.util.Log
 import hr.algebra.isstracker.DataReceiver
+import hr.algebra.isstracker.LOCATION_CONTENT_URI
 import hr.algebra.isstracker.framework.sendBroadcast
 import hr.algebra.isstracker.model.ISSLocation
 import kotlinx.coroutines.CoroutineScope
@@ -44,14 +46,17 @@ class ISSLocationFetcher(private val context: Context) {
     private fun populateItem(issLocationItem: ISSLocationItem) {
         val scope = CoroutineScope(Dispatchers.IO)
         scope.launch {
-            val latitude = issLocationItem.latitude.toDoubleOrNull() ?: 0.0
-            val longitude = issLocationItem.longitude.toDoubleOrNull() ?: 0.0
-
-            var isslocation = ISSLocation(
-                null,
+            val issLocation = ISSLocation(null,
                 issLocationItem.latitude.toDoubleOrNull() ?: 0.0,
                 issLocationItem.longitude.toDoubleOrNull() ?: 0.0
             )
+
+            val values = ContentValues().apply {
+                put("latitude", issLocation.latitude)
+                put("longitude", issLocation.longitude)
+            }
+
+            context.contentResolver.insert(LOCATION_CONTENT_URI, values)
             context.sendBroadcast<DataReceiver>()
         }
     }

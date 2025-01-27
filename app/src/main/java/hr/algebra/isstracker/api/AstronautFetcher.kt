@@ -1,7 +1,9 @@
 package hr.algebra.isstracker.api
 
+import android.content.ContentValues
 import android.content.Context
 import android.util.Log
+import hr.algebra.isstracker.ASTRONAUT_CONTENT_URI
 import hr.algebra.isstracker.DataReceiver
 import hr.algebra.isstracker.framework.sendBroadcast
 import hr.algebra.isstracker.model.Astronaut
@@ -47,32 +49,28 @@ class AstronautFetcher(private val context: Context) {
     }
 
     private fun populateItems(astronautItems: List<AstronautItem>) {
-        val items = mutableListOf<Astronaut>()
         val scope = CoroutineScope(Dispatchers.IO)
         scope.launch {
-            astronautItems.forEach {
-                if (it.flagCode == "cn") {
-                    return@forEach
+            astronautItems
+                .filter { it.flagCode != "cn" }
+                .forEach {
+                    val values = ContentValues().apply {
+                        put("name", it.name)
+                        put("country", it.country)
+                        put("flagCode", it.flagCode)
+                        put("agency", it.agency)
+                        put("position", it.position)
+                        put("daysInSpace", it.daysInSpace.toDouble())
+                        put("description", fetchWikipediaDescription(it.url))
+                        put("url", it.url)
+                        put("image", downloadImage(context, it.image) ?: "")
+                        put("instagram", it.instagram.takeIf { it.isNotEmpty() })
+                        put("twitter", it.twitter.takeIf { it.isNotEmpty() })
+                        put("facebook", it.facebook.takeIf { it.isNotEmpty() })
+                        put("isFavorite", false)
+                    }
+                    context.contentResolver.insert(ASTRONAUT_CONTENT_URI, values)
                 }
-                items.add(
-                    Astronaut(
-                        null,
-                        it.name,
-                        it.country,
-                        it.flagCode,
-                        it.agency,
-                        it.position,
-                        it.daysInSpace.toDouble(),
-                        fetchWikipediaDescription(it.url),
-                        it.url,
-                        downloadImage(context, it.image) ?: "",
-                        if (it.instagram.isEmpty()) null else it.instagram,
-                        if (it.twitter.isEmpty()) null else it.twitter,
-                        if (it.facebook.isEmpty()) null else it.facebook,
-                        isFavorite = false
-                    )
-                )
-            }
             context.sendBroadcast<DataReceiver>()
         }
     }

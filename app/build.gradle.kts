@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    id("kotlin-kapt")
 }
 
 android {
@@ -68,5 +69,17 @@ dependencies {
     implementation(libs.retrofit2.converter.gson)
     // parsing
     implementation (libs.jsoup)
-
+    // room
+    implementation(libs.androidx.room.runtime)
+    implementation("androidx.room:room-ktx:2.6.1")
+    kapt("androidx.room:room-compiler:2.6.1")
+    // maps
+    implementation(libs.play.services.maps)
+    implementation(libs.play.services.location)
+    implementation (libs.android.maps.utils)
+    // dexter
+    implementation(libs.dexter)
+    // picasso
+    implementation(libs.picasso)
+    implementation(libs.picasso.transformations)
 }
