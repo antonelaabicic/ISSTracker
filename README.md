@@ -15,7 +15,7 @@ The application efficiently handles images using Picasso and to provide offline 
 ## 🚀 Features  
 - **ISS Location** – Tracks the ISS position in real-time using [ISSLocation Api](https://api.wheretheiss.at/v1/satellites/25544)
 - **Google Maps Integration** – Displays the ISS locaton on a map
-- **Permission Management with Dexter** – Ensures proper user location access to calculate the distance between the user's location and the ISS
+- **Permission Management** – Ensures proper user location access to calculate the distance between the user's location and the ISS
 - **Astronaut Details** – Fetches data from [People in Space Api](https://corquaid.github.io/international-space-station-APIs/JSON/people-in-space.json) and Wikipedia (via web scraping)
 - **Lottie Animations** – Enhances user experience with smooth animations
 - **Offline Storage with Room Database** – Stores astronaut and ISS data for offline viewing
@@ -24,11 +24,6 @@ The application efficiently handles images using Picasso and to provide offline 
 
 ### **Languages & Frameworks**  
 ![Kotlin](https://img.shields.io/badge/Kotlin-%230095D5.svg?style=for-the-badge&logo=kotlin&logoColor=white)  
-
-### **APIs**  
-![ISSLocation Api](https://img.shields.io/badge/WhereTheISSAt-Real--Time%20Location-blue?style=for-the-badge)  
-![People in Space Api](https://img.shields.io/badge/PeopleInSpace-ISS%20Crew%20Data-blue?style=for-the-badge)
-![Google Maps API](https://img.shields.io/badge/Google%20Maps-Location%20Tracking-green?style=for-the-badge)  
 
 ### **Libraries & Tools**  
 ![Lottie](https://img.shields.io/badge/Lottie-Animations-orange?style=for-the-badge)  
