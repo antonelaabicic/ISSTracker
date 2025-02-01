@@ -17,7 +17,7 @@ The application efficiently handles images using Picasso and to provide offline 
 - **Google Maps Integration** – Displays the ISS location on a map
 - **Permission Management** – Ensures proper user location access to calculate the distance between the user's location and the ISS
 - **Astronaut Details** – Fetches data from [People in Space Api](https://corquaid.github.io/international-space-station-APIs/JSON/people-in-space.json) and Wikipedia (via web scraping)
-- **Lottie Animations** – Enhances user experience with smooth animations
+- **Animations** – Enhances user experience with smooth animations
 - **Offline Storage with Room Database** – Stores astronaut and ISS data for offline viewing
 
 ## 🛠 Built With  
@@ -26,11 +26,11 @@ The application efficiently handles images using Picasso and to provide offline 
 ![Kotlin](https://img.shields.io/badge/Kotlin-%230095D5.svg?style=for-the-badge&logo=kotlin&logoColor=white)  
 
 ### **Libraries & Tools**
-![Lottie](https://img.shields.io/badge/Lottie-Animations-orange?style=for-the-badge)  
-![Gson](https://img.shields.io/badge/Gson-JSON%20Parsing-green?style=for-the-badge)  
-![Jsoup](https://img.shields.io/badge/Jsoup-Web%20Scraping-blue?style=for-the-badge)  
-![Picasso](https://img.shields.io/badge/Picasso-Image%20Loader-pink?style=for-the-badge)  
-![Dexter](https://img.shields.io/badge/Dexter-Permissions-red?style=for-the-badge)  
+![Lottie](https://img.shields.io/badge/Lottie-Animations-orange?style=for-the-badge) 
+![Gson](https://img.shields.io/badge/Gson-JSON%20Parsing-green?style=for-the-badge) 
+![Jsoup](https://img.shields.io/badge/Jsoup-Web%20Scraping-blue?style=for-the-badge) 
+![Picasso](https://img.shields.io/badge/Picasso-Image%20Loader-pink?style=for-the-badge) 
+![Dexter](https://img.shields.io/badge/Dexter-Permissions-red?style=for-the-badge) 
 
 ### **Storage**  
 ![Room](https://img.shields.io/badge/Room-%23FF6F00.svg?style=for-the-badge&logo=android&logoColor=white)
