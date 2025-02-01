@@ -33,4 +33,5 @@ The application efficiently handles images using Picasso and to provide offline 
 ![Gson](https://img.shields.io/badge/Gson-JSON%20Parsing-green?style=for-the-badge)  
 
 ### **Storage**  
-![Room](https://img.shields.io/badge/Room-Storage-blue?style=for-the-badge) 
+![Room](https://img.shields.io/badge/Room-%23FF6F00.svg?style=for-the-badge&logo=android&logoColor=white)
+
