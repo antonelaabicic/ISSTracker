@@ -29,7 +29,8 @@ The application efficiently handles images using Picasso and to provide offline 
 ![Lottie](https://img.shields.io/badge/Lottie-Animations-orange?style=for-the-badge)  
 ![Dexter](https://img.shields.io/badge/Dexter-Permissions-red?style=for-the-badge)  
 ![Jsoup](https://img.shields.io/badge/Jsoup-Web%20Scraping-blue?style=for-the-badge)  
-![Picasso](https://img.shields.io/badge/Picasso-Image%20Loader-pink?style=for-the-badge) 
+![Picasso](https://img.shields.io/badge/Picasso-Image%20Loader-pink?style=for-the-badge)  
+![Gson](https://img.shields.io/badge/Gson-JSON%20Parsing-green?style=for-the-badge)  
 
 ### **Storage**  
-![Room](https://img.shields.io/badge/Room-Database-yellow?style=for-the-badge)  
+![Room](https://img.shields.io/badge/Room-Storage-blue?style=for-the-badge) 
